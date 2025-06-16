@@ -79,10 +79,10 @@ const Services = () => {
             >
               <div className="p-8">
                 <div className="flex items-center mb-6">
-                  <div className="text-blue-600 mr-4">{service.icon}</div>
+                  <div className="text-red-600 mr-4">{service.icon}</div>
                   <div>
                     <h3 className="text-2xl font-bold text-gray-900">{service.title}</h3>
-                    <p className="text-blue-600 font-semibold">{service.price}</p>
+                    <p className="text-red-600 font-semibold">{service.price}</p>
                   </div>
                 </div>
                 
@@ -109,32 +109,32 @@ const Services = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold text-blue-600">1</span>
+              <div className="bg-red-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-red-600">1</span>
               </div>
               <h4 className="text-lg font-semibold text-gray-900 mb-2">Consultation</h4>
               <p className="text-gray-600">Free consultation to discuss your needs and preferences</p>
             </div>
             
             <div className="text-center">
-              <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold text-blue-600">2</span>
+              <div className="bg-red-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-red-600">2</span>
               </div>
               <h4 className="text-lg font-semibold text-gray-900 mb-2">Design</h4>
               <p className="text-gray-600">Custom design creation and material selection</p>
             </div>
             
             <div className="text-center">
-              <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold text-blue-600">3</span>
+              <div className="bg-red-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-red-600">3</span>
               </div>
               <h4 className="text-lg font-semibold text-gray-900 mb-2">Installation</h4>
               <p className="text-gray-600">Professional installation by certified technicians</p>
             </div>
             
             <div className="text-center">
-              <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold text-blue-600">4</span>
+              <div className="bg-red-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-red-600">4</span>
               </div>
               <h4 className="text-lg font-semibold text-gray-900 mb-2">Quality Check</h4>
               <p className="text-gray-600">Final inspection and warranty documentation</p>
@@ -143,23 +143,23 @@ const Services = () => {
         </div>
 
         {/* Warranty Section */}
-        <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl text-white p-8 text-center">
+        <div className="bg-gradient-to-r from-black to-red-900 rounded-2xl text-white p-8 text-center">
           <h2 className="text-3xl font-bold mb-4">Warranty & Guarantee</h2>
-          <p className="text-xl text-blue-100 mb-6">
+          <p className="text-xl text-gray-300 mb-6">
             All our services come with comprehensive warranty coverage
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div>
               <div className="text-2xl font-bold">5 Years</div>
-              <div className="text-blue-100">Vinyl Wrap Warranty</div>
+              <div className="text-gray-300">Vinyl Wrap Warranty</div>
             </div>
             <div>
               <div className="text-2xl font-bold">10 Years</div>
-              <div className="text-blue-100">PPF Protection</div>
+              <div className="text-gray-300">PPF Protection</div>
             </div>
             <div>
               <div className="text-2xl font-bold">2 Years</div>
-              <div className="text-blue-100">Ceramic Coating</div>
+              <div className="text-gray-300">Ceramic Coating</div>
             </div>
           </div>
         </div>

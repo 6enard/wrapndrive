@@ -23,8 +23,8 @@ const Contacts = () => {
               
               <div className="space-y-6">
                 <div className="flex items-start">
-                  <div className="bg-blue-100 p-3 rounded-lg mr-4">
-                    <Phone className="h-6 w-6 text-blue-600" />
+                  <div className="bg-red-100 p-3 rounded-lg mr-4">
+                    <Phone className="h-6 w-6 text-red-600" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900">Phone</h3>
@@ -34,8 +34,8 @@ const Contacts = () => {
                 </div>
 
                 <div className="flex items-start">
-                  <div className="bg-blue-100 p-3 rounded-lg mr-4">
-                    <Mail className="h-6 w-6 text-blue-600" />
+                  <div className="bg-red-100 p-3 rounded-lg mr-4">
+                    <Mail className="h-6 w-6 text-red-600" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900">Email</h3>
@@ -45,8 +45,8 @@ const Contacts = () => {
                 </div>
 
                 <div className="flex items-start">
-                  <div className="bg-blue-100 p-3 rounded-lg mr-4">
-                    <MapPin className="h-6 w-6 text-blue-600" />
+                  <div className="bg-red-100 p-3 rounded-lg mr-4">
+                    <MapPin className="h-6 w-6 text-red-600" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900">Location</h3>
@@ -59,8 +59,8 @@ const Contacts = () => {
                 </div>
 
                 <div className="flex items-start">
-                  <div className="bg-blue-100 p-3 rounded-lg mr-4">
-                    <Clock className="h-6 w-6 text-blue-600" />
+                  <div className="bg-red-100 p-3 rounded-lg mr-4">
+                    <Clock className="h-6 w-6 text-red-600" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900">Business Hours</h3>
@@ -76,7 +76,7 @@ const Contacts = () => {
               <div className="mt-8 pt-6 border-t">
                 <h3 className="font-semibold text-gray-900 mb-4">Follow Us</h3>
                 <div className="flex space-x-4">
-                  <a href="#" className="bg-blue-600 text-white p-2 rounded-lg hover:bg-blue-700 transition-colors duration-200">
+                  <a href="#" className="bg-red-600 text-white p-2 rounded-lg hover:bg-red-700 transition-colors duration-200">
                     <MessageCircle className="h-5 w-5" />
                   </a>
                 </div>
@@ -100,7 +100,7 @@ const Contacts = () => {
                       id="firstName"
                       name="firstName"
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent transition-colors duration-200"
                       placeholder="Your first name"
                     />
                   </div>
@@ -114,7 +114,7 @@ const Contacts = () => {
                       id="lastName"
                       name="lastName"
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent transition-colors duration-200"
                       placeholder="Your last name"
                     />
                   </div>
@@ -130,7 +130,7 @@ const Contacts = () => {
                       id="email"
                       name="email"
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent transition-colors duration-200"
                       placeholder="your.email@example.com"
                     />
                   </div>
@@ -143,7 +143,7 @@ const Contacts = () => {
                       type="tel"
                       id="phone"
                       name="phone"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent transition-colors duration-200"
                       placeholder="+254 700 000 000"
                     />
                   </div>
@@ -157,7 +157,7 @@ const Contacts = () => {
                     id="subject"
                     name="subject"
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent transition-colors duration-200"
                   >
                     <option value="">Select a subject</option>
                     <option value="quote">Request a Quote</option>
@@ -179,14 +179,14 @@ const Contacts = () => {
                     name="message"
                     rows={6}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200 resize-none"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent transition-colors duration-200 resize-none"
                     placeholder="Tell us about your project, vehicle details, and any specific requirements..."
                   ></textarea>
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-blue-600 text-white px-6 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                  className="w-full bg-red-600 text-white px-6 py-4 rounded-lg font-semibold hover:bg-red-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
                 >
                   Send Message
                 </button>
@@ -204,7 +204,7 @@ const Contacts = () => {
               <p className="text-lg font-semibold">Northern Bypass, Opposite Quickmart Thome</p>
               <p>Gachie, Nairobi Area, Kenya 00200</p>
               <p className="mt-2 text-sm">
-                <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:underline">
                   View on Google Maps
                 </a>
               </p>

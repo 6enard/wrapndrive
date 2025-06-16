@@ -81,14 +81,14 @@ const FAQ = () => {
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-inset rounded-xl"
+                className="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-inset rounded-xl"
               >
                 <span className="text-lg font-semibold text-gray-900 pr-4">
                   {faq.question}
                 </span>
                 <div className="flex-shrink-0">
                   {openIndex === index ? (
-                    <ChevronUp className="h-5 w-5 text-blue-600" />
+                    <ChevronUp className="h-5 w-5 text-red-600" />
                   ) : (
                     <ChevronDown className="h-5 w-5 text-gray-400" />
                   )}
@@ -109,23 +109,23 @@ const FAQ = () => {
         </div>
 
         {/* Contact CTA */}
-        <div className="mt-16 bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl text-white p-8 text-center">
+        <div className="mt-16 bg-gradient-to-r from-black to-red-900 rounded-2xl text-white p-8 text-center">
           <h2 className="text-2xl font-bold mb-4">
             Still Have Questions?
           </h2>
-          <p className="text-blue-100 mb-6">
+          <p className="text-gray-300 mb-6">
             Our team is here to help with any specific questions about your project
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="tel:+254792391610"
-              className="bg-white text-blue-600 hover:bg-gray-100 px-6 py-3 rounded-lg font-semibold transition-colors duration-200"
+              className="bg-white text-black hover:bg-gray-100 px-6 py-3 rounded-lg font-semibold transition-colors duration-200"
             >
               Call Us: +254 792 391 610
             </a>
             <a
               href="mailto:wrapndrivelimited@gmail.com"
-              className="border-2 border-white hover:bg-white hover:text-blue-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200"
+              className="border-2 border-white hover:bg-white hover:text-black text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200"
             >
               Email Us
             </a>

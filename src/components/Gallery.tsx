@@ -88,8 +88,8 @@ const Gallery = () => {
               onClick={() => setSelectedCategory(category)}
               className={`px-6 py-3 rounded-lg font-semibold transition-all duration-200 ${
                 selectedCategory === category
-                  ? 'bg-blue-600 text-white shadow-lg'
-                  : 'bg-white text-gray-700 hover:bg-blue-50 shadow-md'
+                  ? 'bg-red-600 text-white shadow-lg'
+                  : 'bg-white text-gray-700 hover:bg-red-50 shadow-md'
               }`}
             >
               {category}
@@ -129,7 +129,7 @@ const Gallery = () => {
 
                 {/* Before/After Labels */}
                 <div className="absolute top-4 left-4">
-                  <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold group-hover:bg-green-600 transition-colors duration-300">
+                  <span className="bg-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold group-hover:bg-green-600 transition-colors duration-300">
                     <span className="group-hover:hidden">Before</span>
                     <span className="hidden group-hover:inline">After</span>
                   </span>
@@ -140,7 +140,7 @@ const Gallery = () => {
                 <div className="flex justify-between items-start mb-2">
                   <h3 className="text-lg font-bold text-gray-900">{item.title}</h3>
                 </div>
-                <span className="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                <span className="inline-block bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">
                   {item.category}
                 </span>
               </div>
@@ -149,7 +149,7 @@ const Gallery = () => {
         </div>
 
         {/* Instructions */}
-        <div className="mt-16 bg-blue-50 rounded-2xl p-8 text-center">
+        <div className="mt-16 bg-red-50 rounded-2xl p-8 text-center">
           <h3 className="text-2xl font-bold text-gray-900 mb-4">
             How to View Before & After
           </h3>
@@ -160,12 +160,12 @@ const Gallery = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="mt-16 bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl text-white p-8 text-center">
+        <div className="mt-16 bg-gradient-to-r from-black to-red-900 rounded-2xl text-white p-8 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready for Your Transformation?</h2>
-          <p className="text-xl text-blue-100 mb-6">
+          <p className="text-xl text-gray-300 mb-6">
             Let us create something amazing for your vehicle too
           </p>
-          <button className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-colors duration-200">
+          <button className="bg-red-600 text-white hover:bg-red-700 px-8 py-3 rounded-lg font-semibold transition-colors duration-200">
             Get Your Quote
           </button>
         </div>

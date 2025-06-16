@@ -77,7 +77,7 @@ const BookNow = () => {
                 <div
                   className={`w-10 h-10 rounded-full flex items-center justify-center font-semibold ${
                     currentStep >= step
-                      ? 'bg-blue-600 text-white'
+                      ? 'bg-red-600 text-white'
                       : 'bg-gray-200 text-gray-500'
                   }`}
                 >
@@ -86,7 +86,7 @@ const BookNow = () => {
                 {step < 4 && (
                   <div
                     className={`w-16 h-1 mx-2 ${
-                      currentStep > step ? 'bg-blue-600' : 'bg-gray-200'
+                      currentStep > step ? 'bg-red-600' : 'bg-gray-200'
                     }`}
                   />
                 )}
@@ -106,7 +106,7 @@ const BookNow = () => {
           {currentStep === 1 && (
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                <Car className="mr-3 h-8 w-8 text-blue-600" />
+                <Car className="mr-3 h-8 w-8 text-red-600" />
                 Select Your Service
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -115,8 +115,8 @@ const BookNow = () => {
                     key={service.id}
                     className={`border-2 rounded-lg p-4 cursor-pointer transition-all duration-200 ${
                       formData.service === service.id
-                        ? 'border-blue-600 bg-blue-50'
-                        : 'border-gray-200 hover:border-blue-300'
+                        ? 'border-red-600 bg-red-50'
+                        : 'border-gray-200 hover:border-red-300'
                     }`}
                   >
                     <input
@@ -130,12 +130,12 @@ const BookNow = () => {
                     <div className="flex justify-between items-center">
                       <div>
                         <h3 className="font-semibold text-gray-900">{service.name}</h3>
-                        <p className="text-blue-600 font-medium">{service.price}</p>
+                        <p className="text-red-600 font-medium">{service.price}</p>
                       </div>
                       <div
                         className={`w-5 h-5 rounded-full border-2 ${
                           formData.service === service.id
-                            ? 'border-blue-600 bg-blue-600'
+                            ? 'border-red-600 bg-red-600'
                             : 'border-gray-300'
                         }`}
                       >
@@ -151,7 +151,7 @@ const BookNow = () => {
                 <button
                   onClick={nextStep}
                   disabled={!formData.service}
-                  className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors duration-200"
+                  className="bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors duration-200"
                 >
                   Next Step
                 </button>
@@ -163,7 +163,7 @@ const BookNow = () => {
           {currentStep === 2 && (
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                <Car className="mr-3 h-8 w-8 text-blue-600" />
+                <Car className="mr-3 h-8 w-8 text-red-600" />
                 Vehicle Information
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -176,7 +176,7 @@ const BookNow = () => {
                     name="vehicleType"
                     value={formData.vehicleType}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent"
                   >
                     <option value="">Select vehicle type</option>
                     {vehicleTypes.map((type) => (
@@ -195,7 +195,7 @@ const BookNow = () => {
                     name="make"
                     value={formData.make}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent"
                     placeholder="e.g., Toyota, BMW, Mercedes"
                   />
                 </div>
@@ -210,7 +210,7 @@ const BookNow = () => {
                     name="model"
                     value={formData.model}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent"
                     placeholder="e.g., Camry, X5, C-Class"
                   />
                 </div>
@@ -225,7 +225,7 @@ const BookNow = () => {
                     name="year"
                     value={formData.year}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent"
                     placeholder="2020"
                     min="1990"
                     max="2025"
@@ -242,7 +242,7 @@ const BookNow = () => {
                     name="color"
                     value={formData.color}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent"
                     placeholder="e.g., White, Black, Silver"
                   />
                 </div>
@@ -258,7 +258,7 @@ const BookNow = () => {
                 <button
                   onClick={nextStep}
                   disabled={!formData.vehicleType || !formData.make || !formData.model || !formData.year}
-                  className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors duration-200"
+                  className="bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors duration-200"
                 >
                   Next Step
                 </button>
@@ -270,7 +270,7 @@ const BookNow = () => {
           {currentStep === 3 && (
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                <User className="mr-3 h-8 w-8 text-blue-600" />
+                <User className="mr-3 h-8 w-8 text-red-600" />
                 Contact Information
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -284,7 +284,7 @@ const BookNow = () => {
                     name="firstName"
                     value={formData.firstName}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent"
                     placeholder="Your first name"
                   />
                 </div>
@@ -299,7 +299,7 @@ const BookNow = () => {
                     name="lastName"
                     value={formData.lastName}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent"
                     placeholder="Your last name"
                   />
                 </div>
@@ -314,7 +314,7 @@ const BookNow = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent"
                     placeholder="your.email@example.com"
                   />
                 </div>
@@ -329,7 +329,7 @@ const BookNow = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent"
                     placeholder="+254 700 000 000"
                   />
                 </div>
@@ -345,7 +345,7 @@ const BookNow = () => {
                 <button
                   onClick={nextStep}
                   disabled={!formData.firstName || !formData.lastName || !formData.email || !formData.phone}
-                  className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors duration-200"
+                  className="bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors duration-200"
                 >
                   Next Step
                 </button>
@@ -357,7 +357,7 @@ const BookNow = () => {
           {currentStep === 4 && (
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                <Calendar className="mr-3 h-8 w-8 text-blue-600" />
+                <Calendar className="mr-3 h-8 w-8 text-red-600" />
                 Schedule Your Appointment
               </h2>
               
@@ -372,7 +372,7 @@ const BookNow = () => {
                     name="preferredDate"
                     value={formData.preferredDate}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent"
                     min={new Date().toISOString().split('T')[0]}
                   />
                 </div>
@@ -386,7 +386,7 @@ const BookNow = () => {
                     name="preferredTime"
                     value={formData.preferredTime}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent"
                   >
                     <option value="">Select time</option>
                     {timeSlots.map((time) => (
@@ -406,7 +406,7 @@ const BookNow = () => {
                   value={formData.message}
                   onChange={handleInputChange}
                   rows={4}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent resize-none"
                   placeholder="Any specific requirements, questions, or additional information..."
                 ></textarea>
               </div>
@@ -421,7 +421,7 @@ const BookNow = () => {
                 <button
                   onClick={handleSubmit}
                   disabled={!formData.preferredDate || !formData.preferredTime}
-                  className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors duration-200"
+                  className="bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors duration-200"
                 >
                   Book Appointment
                 </button>
@@ -451,9 +451,9 @@ const BookNow = () => {
                 </div>
               </div>
 
-              <div className="bg-blue-50 rounded-lg p-6 mb-8">
-                <h4 className="text-lg font-semibold text-blue-900 mb-2">What's Next?</h4>
-                <ul className="text-blue-800 space-y-1">
+              <div className="bg-red-50 rounded-lg p-6 mb-8">
+                <h4 className="text-lg font-semibold text-red-900 mb-2">What's Next?</h4>
+                <ul className="text-red-800 space-y-1">
                   <li>• We'll call you within 24 hours to confirm your appointment</li>
                   <li>• You'll receive an email with detailed preparation instructions</li>
                   <li>• Bring your vehicle on the scheduled date and time</li>
@@ -463,13 +463,13 @@ const BookNow = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button
                   onClick={() => window.location.href = '/'}
-                  className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200"
+                  className="bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors duration-200"
                 >
                   Back to Home
                 </button>
                 <button
                   onClick={() => setCurrentStep(1)}
-                  className="border border-blue-600 text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200"
+                  className="border border-red-600 text-red-600 px-6 py-3 rounded-lg font-semibold hover:bg-red-50 transition-colors duration-200"
                 >
                   Book Another Service
                 </button>

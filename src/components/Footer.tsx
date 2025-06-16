@@ -4,30 +4,30 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-black text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
             <div className="flex items-center mb-4">
-              <Car className="h-8 w-8 text-blue-400 mr-2" />
+              <Car className="h-8 w-8 text-red-600 mr-2" />
               <span className="text-2xl font-bold">WrapNDrive</span>
             </div>
             <p className="text-gray-300 mb-4">
               Premium car wrapping, protection, and detailing services in Nairobi. Transform your vehicle with our expert craftsmanship.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors duration-200">
+              <a href="#" className="text-gray-400 hover:text-red-600 transition-colors duration-200">
                 <span className="sr-only">Facebook</span>
-                <div className="w-6 h-6 bg-blue-600 rounded"></div>
+                <div className="w-6 h-6 bg-red-600 rounded"></div>
               </a>
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors duration-200">
+              <a href="#" className="text-gray-400 hover:text-red-600 transition-colors duration-200">
                 <span className="sr-only">Instagram</span>
-                <div className="w-6 h-6 bg-pink-600 rounded"></div>
+                <div className="w-6 h-6 bg-red-600 rounded"></div>
               </a>
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors duration-200">
+              <a href="#" className="text-gray-400 hover:text-red-600 transition-colors duration-200">
                 <span className="sr-only">Twitter</span>
-                <div className="w-6 h-6 bg-blue-400 rounded"></div>
+                <div className="w-6 h-6 bg-red-600 rounded"></div>
               </a>
             </div>
           </div>
@@ -87,7 +87,7 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Contact Info</h3>
             <div className="space-y-3">
               <div className="flex items-start">
-                <Phone className="h-5 w-5 text-blue-400 mr-3 mt-0.5 flex-shrink-0" />
+                <Phone className="h-5 w-5 text-red-600 mr-3 mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-gray-300">+254 792 391 610</p>
                   <p className="text-gray-400 text-sm">Call or WhatsApp</p>
@@ -95,14 +95,14 @@ const Footer = () => {
               </div>
               
               <div className="flex items-start">
-                <Mail className="h-5 w-5 text-blue-400 mr-3 mt-0.5 flex-shrink-0" />
+                <Mail className="h-5 w-5 text-red-600 mr-3 mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-gray-300">wrapndrivelimited@gmail.com</p>
                 </div>
               </div>
               
               <div className="flex items-start">
-                <MapPin className="h-5 w-5 text-blue-400 mr-3 mt-0.5 flex-shrink-0" />
+                <MapPin className="h-5 w-5 text-red-600 mr-3 mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-gray-300">
                     Northern Bypass, Opposite Quickmart Thome<br />
@@ -112,7 +112,7 @@ const Footer = () => {
               </div>
               
               <div className="flex items-start">
-                <Clock className="h-5 w-5 text-blue-400 mr-3 mt-0.5 flex-shrink-0" />
+                <Clock className="h-5 w-5 text-red-600 mr-3 mt-0.5 flex-shrink-0" />
                 <div className="text-gray-300">
                   <p>Mon-Fri: 8AM-6PM</p>
                   <p>Sat: 8AM-5PM</p>
