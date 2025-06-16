@@ -53,12 +53,7 @@ const HomePage = () => {
             <div className="mb-6">
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
                 <span className="inline-block animate-slide-down opacity-0 animation-delay-300">
-                  Transform Your
-                </span>
-                <span className="block mt-2">
-                  <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-red-500 to-red-600 animate-gradient-x animate-slide-up opacity-0 animation-delay-600">
-                    Vehicle's Style
-                  </span>
+                  Transform Your Vehicle
                 </span>
               </h1>
             </div>
@@ -86,11 +81,11 @@ const HomePage = () => {
                 <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
               </Link>
               <Link
-                to="/simulation"
+                to="/contacts"
                 className="group border-2 border-white hover:bg-white hover:text-black text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 inline-flex items-center justify-center hover:shadow-2xl animate-pulse-border"
               >
                 <Sparkles className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform duration-300" />
-                Try Simulator
+                Contact Us
               </Link>
             </div>
 

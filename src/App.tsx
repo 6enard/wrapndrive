@@ -7,7 +7,6 @@ import Gallery from './components/Gallery';
 import FAQ from './components/FAQ';
 import Contacts from './components/Contacts';
 import BookNow from './components/BookNow';
-import Simulation from './components/Simulation';
 import Footer from './components/Footer';
 
 function App() {
@@ -22,7 +21,6 @@ function App() {
           <Route path="/faq" element={<FAQ />} />
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/book" element={<BookNow />} />
-          <Route path="/simulation" element={<Simulation />} />
         </Routes>
         <Footer />
       </div>
