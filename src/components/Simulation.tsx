@@ -1,55 +1,185 @@
 import React, { useState } from 'react';
-import { Palette, RotateCcw, Download, Sparkles } from 'lucide-react';
+import { Palette, RotateCcw, Download, Sparkles, Car } from 'lucide-react';
 
 const Simulation = () => {
+  const [selectedCategory, setSelectedCategory] = useState('sedan');
   const [selectedCar, setSelectedCar] = useState('mercedes-c-class');
   const [selectedColor, setSelectedColor] = useState('#DC2626');
   const [selectedFinish, setSelectedFinish] = useState('gloss');
 
-  const carTypes = [
-    { 
-      id: 'mercedes-c-class', 
-      name: 'Mercedes C-Class', 
-      category: 'Luxury Sedan',
-      basePrice: 95000,
-      image: 'https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&w=800'
-    },
-    { 
-      id: 'toyota-camry', 
-      name: 'Toyota Camry', 
-      category: 'Mid-size Sedan',
-      basePrice: 85000,
-      image: 'https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg?auto=compress&cs=tinysrgb&w=800'
-    },
-    { 
-      id: 'audi-a4', 
-      name: 'Audi A4', 
-      category: 'Luxury Sedan',
-      basePrice: 92000,
-      image: 'https://images.pexels.com/photos/1545743/pexels-photo-1545743.jpeg?auto=compress&cs=tinysrgb&w=800'
-    },
-    { 
-      id: 'mazda-cx5', 
-      name: 'Mazda CX-5', 
-      category: 'Compact SUV',
-      basePrice: 88000,
-      image: 'https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&w=800'
-    },
-    { 
-      id: 'bmw-x3', 
-      name: 'BMW X3', 
-      category: 'Luxury SUV',
-      basePrice: 98000,
-      image: 'https://images.pexels.com/photos/1213294/pexels-photo-1213294.jpeg?auto=compress&cs=tinysrgb&w=800'
-    },
-    { 
-      id: 'honda-civic', 
-      name: 'Honda Civic', 
-      category: 'Compact Sedan',
-      basePrice: 78000,
-      image: 'https://images.pexels.com/photos/164634/pexels-photo-164634.jpeg?auto=compress&cs=tinysrgb&w=800'
-    }
+  const categories = [
+    { id: 'sedan', name: 'Sedan', icon: '🚗' },
+    { id: 'suv', name: 'SUV', icon: '🚙' },
+    { id: 'mini-suv', name: 'Mini SUV', icon: '🚐' },
+    { id: 'pickup', name: 'Pickup', icon: '🛻' },
+    { id: 'coupe', name: 'Coupe', icon: '🏎️' },
+    { id: 'hatchback', name: 'Hatchback', icon: '🚗' }
   ];
+
+  const carsByCategory = {
+    sedan: [
+      { 
+        id: 'mercedes-c-class', 
+        name: 'Mercedes C-Class', 
+        basePrice: 95000,
+        image: 'https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&w=800'
+      },
+      { 
+        id: 'toyota-camry', 
+        name: 'Toyota Camry', 
+        basePrice: 85000,
+        image: 'https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg?auto=compress&cs=tinysrgb&w=800'
+      },
+      { 
+        id: 'audi-a4', 
+        name: 'Audi A4', 
+        basePrice: 92000,
+        image: 'https://images.pexels.com/photos/1545743/pexels-photo-1545743.jpeg?auto=compress&cs=tinysrgb&w=800'
+      },
+      { 
+        id: 'honda-civic', 
+        name: 'Honda Civic', 
+        basePrice: 78000,
+        image: 'https://images.pexels.com/photos/164634/pexels-photo-164634.jpeg?auto=compress&cs=tinysrgb&w=800'
+      },
+      { 
+        id: 'bmw-3-series', 
+        name: 'BMW 3 Series', 
+        basePrice: 98000,
+        image: 'https://images.pexels.com/photos/1213294/pexels-photo-1213294.jpeg?auto=compress&cs=tinysrgb&w=800'
+      }
+    ],
+    suv: [
+      { 
+        id: 'bmw-x5', 
+        name: 'BMW X5', 
+        basePrice: 120000,
+        image: 'https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&w=800'
+      },
+      { 
+        id: 'mercedes-gle', 
+        name: 'Mercedes GLE', 
+        basePrice: 125000,
+        image: 'https://images.pexels.com/photos/193999/pexels-photo-193999.jpeg?auto=compress&cs=tinysrgb&w=800'
+      },
+      { 
+        id: 'audi-q7', 
+        name: 'Audi Q7', 
+        basePrice: 115000,
+        image: 'https://images.pexels.com/photos/210019/pexels-photo-210019.jpeg?auto=compress&cs=tinysrgb&w=800'
+      },
+      { 
+        id: 'toyota-prado', 
+        name: 'Toyota Prado', 
+        basePrice: 110000,
+        image: 'https://images.pexels.com/photos/3752169/pexels-photo-3752169.jpeg?auto=compress&cs=tinysrgb&w=800'
+      }
+    ],
+    'mini-suv': [
+      { 
+        id: 'mazda-cx5', 
+        name: 'Mazda CX-5', 
+        basePrice: 88000,
+        image: 'https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&w=800'
+      },
+      { 
+        id: 'honda-crv', 
+        name: 'Honda CR-V', 
+        basePrice: 85000,
+        image: 'https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg?auto=compress&cs=tinysrgb&w=800'
+      },
+      { 
+        id: 'toyota-rav4', 
+        name: 'Toyota RAV4', 
+        basePrice: 90000,
+        image: 'https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&w=800'
+      },
+      { 
+        id: 'nissan-xtrail', 
+        name: 'Nissan X-Trail', 
+        basePrice: 82000,
+        image: 'https://images.pexels.com/photos/164634/pexels-photo-164634.jpeg?auto=compress&cs=tinysrgb&w=800'
+      }
+    ],
+    pickup: [
+      { 
+        id: 'toyota-hilux', 
+        name: 'Toyota Hilux', 
+        basePrice: 95000,
+        image: 'https://images.pexels.com/photos/1545743/pexels-photo-1545743.jpeg?auto=compress&cs=tinysrgb&w=800'
+      },
+      { 
+        id: 'ford-ranger', 
+        name: 'Ford Ranger', 
+        basePrice: 92000,
+        image: 'https://images.pexels.com/photos/193999/pexels-photo-193999.jpeg?auto=compress&cs=tinysrgb&w=800'
+      },
+      { 
+        id: 'isuzu-dmax', 
+        name: 'Isuzu D-Max', 
+        basePrice: 88000,
+        image: 'https://images.pexels.com/photos/210019/pexels-photo-210019.jpeg?auto=compress&cs=tinysrgb&w=800'
+      },
+      { 
+        id: 'mitsubishi-l200', 
+        name: 'Mitsubishi L200', 
+        basePrice: 85000,
+        image: 'https://images.pexels.com/photos/1213294/pexels-photo-1213294.jpeg?auto=compress&cs=tinysrgb&w=800'
+      }
+    ],
+    coupe: [
+      { 
+        id: 'bmw-4-series', 
+        name: 'BMW 4 Series', 
+        basePrice: 105000,
+        image: 'https://images.pexels.com/photos/1213294/pexels-photo-1213294.jpeg?auto=compress&cs=tinysrgb&w=800'
+      },
+      { 
+        id: 'mercedes-c-coupe', 
+        name: 'Mercedes C-Class Coupe', 
+        basePrice: 108000,
+        image: 'https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&w=800'
+      },
+      { 
+        id: 'audi-a5', 
+        name: 'Audi A5', 
+        basePrice: 102000,
+        image: 'https://images.pexels.com/photos/1545743/pexels-photo-1545743.jpeg?auto=compress&cs=tinysrgb&w=800'
+      },
+      { 
+        id: 'ford-mustang', 
+        name: 'Ford Mustang', 
+        basePrice: 110000,
+        image: 'https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&w=800'
+      }
+    ],
+    hatchback: [
+      { 
+        id: 'volkswagen-golf', 
+        name: 'Volkswagen Golf', 
+        basePrice: 75000,
+        image: 'https://images.pexels.com/photos/164634/pexels-photo-164634.jpeg?auto=compress&cs=tinysrgb&w=800'
+      },
+      { 
+        id: 'honda-fit', 
+        name: 'Honda Fit', 
+        basePrice: 65000,
+        image: 'https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg?auto=compress&cs=tinysrgb&w=800'
+      },
+      { 
+        id: 'toyota-vitz', 
+        name: 'Toyota Vitz', 
+        basePrice: 62000,
+        image: 'https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&w=800'
+      },
+      { 
+        id: 'mazda-demio', 
+        name: 'Mazda Demio', 
+        basePrice: 68000,
+        image: 'https://images.pexels.com/photos/193999/pexels-photo-193999.jpeg?auto=compress&cs=tinysrgb&w=800'
+      }
+    ]
+  };
 
   const colors = [
     { name: 'Racing Red', value: '#DC2626' },
@@ -73,7 +203,15 @@ const Simulation = () => {
     { id: 'carbon', name: 'Carbon Fiber', description: 'Textured carbon fiber pattern', price: 25000 }
   ];
 
+  const handleCategoryChange = (categoryId: string) => {
+    setSelectedCategory(categoryId);
+    // Set the first car of the new category as selected
+    const firstCar = carsByCategory[categoryId as keyof typeof carsByCategory][0];
+    setSelectedCar(firstCar.id);
+  };
+
   const resetSimulation = () => {
+    setSelectedCategory('sedan');
     setSelectedCar('mercedes-c-class');
     setSelectedColor('#DC2626');
     setSelectedFinish('gloss');
@@ -126,7 +264,8 @@ const Simulation = () => {
     }
   };
 
-  const selectedCarData = carTypes.find(car => car.id === selectedCar);
+  const currentCars = carsByCategory[selectedCategory as keyof typeof carsByCategory];
+  const selectedCarData = currentCars.find(car => car.id === selectedCar);
   const selectedColorData = colors.find(color => color.value === selectedColor);
   const selectedFinishData = finishes.find(finish => finish.id === selectedFinish);
   
@@ -141,7 +280,7 @@ const Simulation = () => {
             Car Wrap Simulator
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Visualize how different colors and finishes will look on popular car models before making a decision
+            Visualize how different colors and finishes will look on various vehicle types before making a decision
           </p>
         </div>
 
@@ -155,7 +294,7 @@ const Simulation = () => {
                   {selectedCarData?.name} • {selectedColorData?.name} • {selectedFinishData?.name}
                 </p>
                 <p className="text-sm text-gray-500 mt-1">
-                  {selectedCarData?.category}
+                  {categories.find(cat => cat.id === selectedCategory)?.name}
                 </p>
               </div>
 
@@ -227,11 +366,37 @@ const Simulation = () => {
 
           {/* Customization Panel */}
           <div className="space-y-6">
+            {/* Vehicle Category Selection */}
+            <div className="bg-white rounded-2xl shadow-lg p-6">
+              <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                <Car className="mr-2 h-6 w-6 text-red-600" />
+                Vehicle Category
+              </h3>
+              <div className="grid grid-cols-2 gap-3">
+                {categories.map((category) => (
+                  <button
+                    key={category.id}
+                    onClick={() => handleCategoryChange(category.id)}
+                    className={`p-4 rounded-lg border-2 transition-all duration-200 text-center ${
+                      selectedCategory === category.id
+                        ? 'border-red-600 bg-red-50'
+                        : 'border-gray-200 hover:border-red-300'
+                    }`}
+                  >
+                    <div className="text-2xl mb-2">{category.icon}</div>
+                    <div className="font-semibold text-gray-900 text-sm">{category.name}</div>
+                  </button>
+                ))}
+              </div>
+            </div>
+
             {/* Car Model Selection */}
             <div className="bg-white rounded-2xl shadow-lg p-6">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Select Vehicle Model</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
+                Select {categories.find(cat => cat.id === selectedCategory)?.name} Model
+              </h3>
               <div className="space-y-3">
-                {carTypes.map((car) => (
+                {currentCars.map((car) => (
                   <button
                     key={car.id}
                     onClick={() => setSelectedCar(car.id)}
@@ -244,7 +409,6 @@ const Simulation = () => {
                     <div className="flex items-center justify-between">
                       <div>
                         <h4 className="font-semibold text-gray-900">{car.name}</h4>
-                        <p className="text-sm text-gray-600">{car.category}</p>
                         <p className="text-sm text-red-600 font-medium">Base: KSh {car.basePrice.toLocaleString()}</p>
                       </div>
                       <div className="w-16 h-12 rounded overflow-hidden">
@@ -352,90 +516,85 @@ const Simulation = () => {
           </div>
         </div>
 
-        {/* Simulation Explanation */}
+        {/* Vehicle Categories Info */}
         <div className="mt-12 bg-white rounded-2xl shadow-lg p-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
-            How Our Simulator Works
+            Popular Models by Category
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="text-center p-4">
-              <div className="bg-red-100 p-3 rounded-full w-12 h-12 mx-auto mb-3 flex items-center justify-center">
-                <Sparkles className="h-6 w-6 text-red-600" />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Real Car Photos</h3>
-              <p className="text-gray-600 text-sm">We use actual photographs of popular car models for the most realistic preview experience</p>
+            <div className="text-center p-4 bg-gray-50 rounded-lg">
+              <div className="text-3xl mb-3">🚗</div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Sedans</h3>
+              <p className="text-gray-600 text-sm">Mercedes C-Class, Toyota Camry, Audi A4, Honda Civic, BMW 3 Series</p>
             </div>
-            <div className="text-center p-4">
-              <div className="bg-red-100 p-3 rounded-full w-12 h-12 mx-auto mb-3 flex items-center justify-center">
-                <Palette className="h-6 w-6 text-red-600" />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Color Overlay Technology</h3>
-              <p className="text-gray-600 text-sm">Advanced color blending shows how different wrap colors and finishes will look on your vehicle</p>
+            <div className="text-center p-4 bg-gray-50 rounded-lg">
+              <div className="text-3xl mb-3">🚙</div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">SUVs</h3>
+              <p className="text-gray-600 text-sm">BMW X5, Mercedes GLE, Audi Q7, Toyota Prado</p>
             </div>
-            <div className="text-center p-4">
-              <div className="bg-red-100 p-3 rounded-full w-12 h-12 mx-auto mb-3 flex items-center justify-center">
-                <Download className="h-6 w-6 text-red-600" />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Accurate Pricing</h3>
-              <p className="text-gray-600 text-sm">Get real-time pricing based on your specific vehicle model and selected customization options</p>
+            <div className="text-center p-4 bg-gray-50 rounded-lg">
+              <div className="text-3xl mb-3">🚐</div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Mini SUVs</h3>
+              <p className="text-gray-600 text-sm">Mazda CX-5, Honda CR-V, Toyota RAV4, Nissan X-Trail</p>
             </div>
-          </div>
-        </div>
-
-        {/* Popular Models Info */}
-        <div className="mt-12 bg-gradient-to-r from-gray-900 to-red-900 rounded-2xl text-white p-8">
-          <h2 className="text-2xl font-bold mb-6 text-center">
-            Featured Vehicle Models
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="text-center">
-              <h3 className="text-lg font-semibold mb-2">Luxury Sedans</h3>
-              <p className="text-gray-300 text-sm">Mercedes C-Class, Audi A4 - Premium wrapping for luxury vehicles</p>
+            <div className="text-center p-4 bg-gray-50 rounded-lg">
+              <div className="text-3xl mb-3">🛻</div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Pickups</h3>
+              <p className="text-gray-600 text-sm">Toyota Hilux, Ford Ranger, Isuzu D-Max, Mitsubishi L200</p>
             </div>
-            <div className="text-center">
-              <h3 className="text-lg font-semibold mb-2">Popular Sedans</h3>
-              <p className="text-gray-300 text-sm">Toyota Camry, Honda Civic - Most requested models in Kenya</p>
+            <div className="text-center p-4 bg-gray-50 rounded-lg">
+              <div className="text-3xl mb-3">🏎️</div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Coupes</h3>
+              <p className="text-gray-600 text-sm">BMW 4 Series, Mercedes C-Class Coupe, Audi A5, Ford Mustang</p>
             </div>
-            <div className="text-center">
-              <h3 className="text-lg font-semibold mb-2">SUVs</h3>
-              <p className="text-gray-300 text-sm">Mazda CX-5, BMW X3 - Perfect for family and adventure vehicles</p>
+            <div className="text-center p-4 bg-gray-50 rounded-lg">
+              <div className="text-3xl mb-3">🚗</div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Hatchbacks</h3>
+              <p className="text-gray-600 text-sm">Volkswagen Golf, Honda Fit, Toyota Vitz, Mazda Demio</p>
             </div>
           </div>
         </div>
 
         {/* How It Works */}
-        <div className="mt-12 bg-white rounded-2xl shadow-lg p-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
-            Simple 4-Step Process
+        <div className="mt-12 bg-gradient-to-r from-gray-900 to-red-900 rounded-2xl text-white p-8">
+          <h2 className="text-2xl font-bold mb-6 text-center">
+            Simple 5-Step Process
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
             <div className="text-center">
               <div className="bg-red-100 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                 <span className="text-2xl font-bold text-red-600">1</span>
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Choose Your Model</h3>
-              <p className="text-gray-600">Select from Mercedes, Toyota, Audi, Mazda, BMW, and Honda models</p>
+              <h3 className="text-lg font-semibold mb-2">Choose Category</h3>
+              <p className="text-gray-300 text-sm">Select from Sedan, SUV, Mini SUV, Pickup, Coupe, or Hatchback</p>
             </div>
             <div className="text-center">
               <div className="bg-red-100 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                 <span className="text-2xl font-bold text-red-600">2</span>
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Pick Colors & Finish</h3>
-              <p className="text-gray-600">Choose from 12 premium colors and 4 professional finish types</p>
+              <h3 className="text-lg font-semibold mb-2">Pick Your Model</h3>
+              <p className="text-gray-300 text-sm">Choose from popular models in your selected category</p>
             </div>
             <div className="text-center">
               <div className="bg-red-100 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                 <span className="text-2xl font-bold text-red-600">3</span>
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">See Real Preview</h3>
-              <p className="text-gray-600">View realistic simulation with accurate color and finish representation</p>
+              <h3 className="text-lg font-semibold mb-2">Select Color</h3>
+              <p className="text-gray-300 text-sm">Choose from 12 premium colors</p>
             </div>
             <div className="text-center">
               <div className="bg-red-100 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                 <span className="text-2xl font-bold text-red-600">4</span>
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Book Your Service</h3>
-              <p className="text-gray-600">Love the result? Book your wrap service with exact specifications</p>
+              <h3 className="text-lg font-semibold mb-2">Choose Finish</h3>
+              <p className="text-gray-300 text-sm">Select from Gloss, Matte, Satin, or Carbon Fiber</p>
+            </div>
+            <div className="text-center">
+              <div className="bg-red-100 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                <span className="text-2xl font-bold text-red-600">5</span>
+              </div>
+              <h3 className="text-lg font-semibold mb-2">Book Service</h3>
+              <p className="text-gray-300 text-sm">Love the result? Book your wrap with exact specifications</p>
             </div>
           </div>
         </div>
